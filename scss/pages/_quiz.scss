@@ -1,0 +1,10 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.quiz .q {
+  padding: 12px;
+  border-radius: 12px;
+  background: #0a152b;
+  border: 1px solid rgba(255,255,255,.09);
+  margin-bottom: 10px;
+}
