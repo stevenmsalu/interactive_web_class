@@ -1,321 +1,430 @@
-* {
-  box-sizing: border-box;
+:root {
+    --bg: #ffffff;
+    /* Changed: white base for cleaner contrast */
+    --card: #f5f9ff;
+    /* Changed: soft blue card surface */
+    --ink: #0f172a;
+    /* Changed: deep slate for higher contrast */
+    --muted: #e1e1e1;
+    /* Changed: muted slate for secondary text */
+    --accent: #0dfa50;
+    --accent-2: #22d51c;
+    --ok: #00e676;
+    --warn: #ffd600;
+    --bad: #ff3d00;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .15);
+    --mono: ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
 }
 
-html, body {
-  height: 100%;
+.text-link {
+    color: rgba(23, 77, 240, .774);
+    /* Added: specific blue for “Explore” links */
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
 }
 
 body {
-  margin: 0;
-  background: radial-gradient(1200px 700px at 80% -10%, #1b2340 0%, #0b1220 60%), #0b1220;
-  color: #e9eefc;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.6;
+    margin: 0;
+    background: var(--bg);
+    /* Changed: make non-hero sections start on white */
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6
+}
+
+
+/* Added: Apply background image only on the home page (index.html) */
+
+.home {
+    /* Soft white overlay on top of the image for text readability */
+    background: linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, 0)), url('assets/Background.svg');
+    background-size: cover;
+    /* Make image cover entire viewport */
+    background-position: center;
+    /* Keep focal point centered */
+    background-repeat: no-repeat;
+    /* Prevent image tiling */
 }
 
 a {
-  color: #6ee7ff;
-  text-decoration: none;
+    color: var(--accent);
+    text-decoration: none
 }
+
 a:hover {
-  opacity: 0.9;
-}
-
-.code {
-  position: relative;
-  background: #0c1526;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: #e6f3ff;
-  padding: 14px;
-  padding-top: 40px;
-  border-radius: 14px;
-  overflow: auto;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-}
-
-pre, code {
-  font-family: ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-.details {
-  background: #0e1830;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 14px;
-  border-radius: 14px;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  backdrop-filter: blur(10px);
-  background: linear-gradient(to bottom, rgba(11, 18, 32, 0.85), rgba(11, 18, 32, 0.35));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.nav a {
-  font-weight: 600;
-  opacity: 0.95;
-  margin: 0 6px;
-}
-.nav a.active {
-  border-bottom: 2px solid #6ee7ff;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  letter-spacing: 0.3px;
-}
-
-.logo {
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-footer.site-footer {
-  color: #a8b3cf;
-  font-size: 14px;
-  padding: 30px 0 60px;
-}
-
-.footer-note {
-  color: #a8b3cf;
-  text-align: center;
-  margin: 30px 0;
+    opacity: .9
 }
 
 .wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px
 }
 
-.grid {
-  display: grid;
-  gap: 22px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Changed: raise above preview iframe to prevent overlap */
+    backdrop-filter: blur(10px);
+    background: rgb(34, 36, 195);
+    border-bottom: 1px solid rgba(0, 0, 0, .233)
 }
 
-.cards .card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px
 }
 
-.section {
-  scroll-margin-top: 90px;
-  margin-top: 30px;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    letter-spacing: .3px
 }
 
-.two {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 22px;
-}
-@media (max-width: 880px) {
-  .two {
-    grid-template-columns: 1fr;
-  }
+.logo {
+    border-radius: 12px;
+    box-shadow: var(--shadow)
 }
 
-.grid-1 {
-  display: grid;
-  gap: 12px;
+nav a {
+    font-weight: 600;
+    opacity: .95;
+    margin: 0 6px
+}
+
+nav a.active {
+    border-bottom: 2px solid var(--accent)
 }
 
 .btn {
-  display: inline-block;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
-  color: #e9eefc;
-  font-weight: 700;
-  cursor: pointer;
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, .14);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .5));
+    color: var(--ink);
+    font-weight: 700;
+    cursor: pointer
 }
+
 .btn.small {
-  padding: 8px 10px;
-  font-size: 14px;
+    padding: 8px 10px;
+    font-size: 14px
 }
+
 .btn.ghost {
-  background: transparent;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .5));
 }
 
 .btn-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.pill {
-  display: inline-block;
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #a8b3cf;
-}
-
-.copy {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-family: ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.06);
-  color: #e9eefc;
-  cursor: pointer;
-}
-
-.form {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-.field {
-  margin-bottom: 16px;
-}
-.field.inline {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 700;
-}
-
-input[type=text], input[type=email], select, textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: #0b1428;
-  color: #e9eefc;
-}
-input[type=text]:focus, input[type=email]:focus, select:focus, textarea:focus {
-  outline: 2px solid #6ee7ff;
-  border-color: transparent;
-}
-
-.hint {
-  color: #a8b3cf;
-  font-size: 12px;
-}
-
-.error {
-  color: #ef4444;
-  font-size: 14px;
-  margin: 6px 0 0;
-}
-
-.success {
-  color: #10b981;
-  font-weight: 700;
-}
-
-.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-textarea {
-  width: 100%;
-  min-height: 220px;
-  background: #0b1428;
-  color: #e9eefc;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 12px;
-  font-family: ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap
 }
 
 .hero {
-  padding: 60px 20px 30px;
-  text-align: center;
+    padding: 60px 20px 30px;
+    text-align: center;
+    /* Added: Home hero background image with soft overlay for readability */
+    /*background: linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, 0.169)), url('assets/Background.svg');*/
+    background-size: cover;
+    /* Added: make image cover the hero area on large screens */
+    background-position: center;
+    /* Added: keep focal point centered */
+    background-repeat: no-repeat;
+    /* Added: prevent image tiling */
 }
+
+
+/* Added: apply background image only to the home page hero */
+
+.home .hero {
+    /* Soft white overlay on top of the image for text readability */
+    /*background: linear-gradient(rgba(255, 255, 255, .78), rgba(255, 255, 255, 0)), url('assets/Background.svg');*/
+    min-height: 110vh;
+    /* Ensure following sections start below the image */
+}
+
 .hero h1 {
-  font-size: clamp(28px, 5vw, 48px);
-  margin: 0 0 10px;
+    font-size: clamp(28px, 5vw, 48px);
+    margin: 0 0 40px
 }
 
 .tag {
-  color: #a8b3cf;
-  font-weight: 600;
+    color: var(--muted);
+    font-weight: 600
 }
 
 .grad {
-  background: linear-gradient(90deg, #6ee7ff, #b794f4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    color: #2563eb;
+    /* Changed: solid title accent for readability */
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial
 }
 
 .grad-2 {
-  background: linear-gradient(90deg, #22d3ee, #60a5fa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    color: #2563eb;
+    /* Changed: solid title accent for readability */
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial
 }
 
 .grad-3 {
-  background: linear-gradient(90deg, #a78bfa, #f472b6);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+    color: #2563eb;
+    /* Changed: solid title accent for readability */
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial
+}
+
+.grid {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+}
+
+.cards .card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .6), rgba(255, 255, 255, .4));
+    border: 1px solid rgba(0, 0, 0, .07);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow)
+}
+
+.section {
+    scroll-margin-top: 90px;
+    margin-top: 30px
+}
+
+.two {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 22px
+}
+
+@media (max-width: 880px) {
+    .two {
+        grid-template-columns: 1fr
+    }
 }
 
 .demo-card {
-  background: #0a1224;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 8px;
+    background: var(--card);
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-radius: 16px;
+    padding: 8px;
+    overflow: hidden;
+    /* Changed: keep iframe fully contained */
+    margin-top: 12px;
+    /* Changed: add spacing so it doesn't sit on tabs */
 }
 
 .mock {
-  width: 100%;
-  min-height: 240px;
-  border: 0;
-  border-radius: 12px;
-  background: white;
+    width: 100%;
+    min-height: 240px;
+    height: 360px;
+    /* Changed: fixed preview height for stability */
+    border: 0;
+    border-radius: 12px;
+    background: white;
+    display: block;
+    /* Changed: avoid inline layout quirks */
+    position: relative;
+    z-index: 0;
+    /* Changed: ensure sticky header stays above */
+}
+
+footer.site-footer {
+    color: var(--ink);
+    font-size: 14px;
+    padding: 30px 0 60px
+}
+
+.footer-note {
+    color: var(--ink);
+    text-align: center;
+    margin: 30px 0
+}
+
+.code {
+    position: relative;
+    background: var(--card);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: var(--ink);
+    padding: 14px;
+    padding-top: 40px;
+    border-radius: 14px;
+    overflow: auto;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.copy {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    background: rgba(255, 255, 255, .6);
+    color: var(--ink);
+    cursor: pointer
+}
+
+pre,
+code {
+    font-family: var(--mono);
+    color: var(--ink);
+}
+
+.details {
+    background: var(--card);
+    border: 1px solid rgba(0, 0, 0, .08);
+    padding: 14px;
+    border-radius: 14px
 }
 
 .try-frame {
-  width: 100%;
-  min-height: 320px;
-  background: white;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    min-height: 320px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, .1)
+}
+
+.grid-1 {
+    display: grid;
+    gap: 12px
+}
+
+textarea {
+    width: 100%;
+    min-height: 220px;
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    padding: 12px;
+    font-family: var(--mono)
 }
 
 .quiz .q {
-  padding: 12px;
-  border-radius: 12px;
-  background: #0a152b;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid rgba(0, 0, 0, .09);
+    margin-bottom: 10px
 }
 
-/*# sourceMappingURL=styles.css.map */
+.pill {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .6);
+    border: 1px solid rgba(0, 0, 0, .08);
+    color: var(--muted)
+}
+
+
+/* Form styles */
+
+.form {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .6), rgba(255, 255, 255, .4));
+    border: 1px solid rgba(0, 0, 0, .07);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow)
+}
+
+.field {
+    margin-bottom: 16px
+}
+
+.field.inline {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 700
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .14);
+    background: rgba(255, 255, 255, .8);
+    color: var(--ink)
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--accent);
+    border-color: transparent
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 12px
+}
+
+.error {
+    color: var(--bad);
+    font-size: 14px;
+    margin: 6px 0 0
+}
+
+.success {
+    color: var(--ok);
+    font-weight: 700
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+
+/* Changed: responsive tweak to trim preview height on small screens */
+
+@media (max-width: 600px) {
+    .mock {
+        height: 300px
+    }
+}
+
+
+/* Changed: large-screen refinement to keep gradient elegant at big sizes */
+
+@media (min-width: 1600px) {
+    body {
+        background: radial-gradient(180vh 100vh at 80% -15%, #e6f2ff 0%, var(--bg) 60%), var(--bg)
+    }
+}
