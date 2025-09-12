@@ -1,29 +1,40 @@
-# Changelog
+# CHANGELOG
 
-All important changes to this project will be documented in this file.
+All notable changes to this project will be documented here.
 
 ## [Unreleased]
 
-### Fixed Bugs
-- Moved `logo.svg` into the `assets` subdirectory.
-- Moved `preview.html` to proper location.
-- Fixed overlapping text and copy button issues in all code boxes across the application.
+### Fixes
+- Moved `logo.svg` into the `assets/` folder.
+- Relocated `preview.html` to the correct directory.
+- Fixed overlapping text and copy button issues in code boxes.
 
-### Added Lessons
-- Added a new lesson on HTML.
-- Added a new lesson on CSS.
-- Added a new lesson on JavaScript.
+### Lessons
+- Added 2 new HTML lessons.
+- Added 3 new CSS lessons.
+- Added 3 new JavaScript lessons.
 
-### Added Quizzes
-- Added 2 new quizzes to the quiz page.
+### Quizzes
+- Added 6 new quizzes to the quiz page.
 
 ### CSS Overhaul
-- Migrated from plain CSS to SCSS for scalable styling.
-- Implemented a modular SCSS file structure.
+- Refined color palette in `:root` for better contrast and softer surfaces.
+- Introduced `.text-link` class for clear blue navigation links.
+- Set `body` background to solid white instead of gradient.
+- Updated header (`.site-header`) with higher z-index and new background color.
+- Scoped hero background image to the home page only (`.home .hero`).
+- Simplified gradient text styles to solid accessible blue.
+- Improved preview card layout:
+  - Contained iframe (`.demo-card`, `.mock`).
+  - Stabilized size and spacing.
+- Unified UI surfaces (`.code`, `.details`, `textarea`) with card background.
+- Added responsive tweaks:
+  - Smaller preview on mobile.
+  - Subtle radial gradient background on ultra-wide screens.
+- Added `<body class="home">` in `index.html` to target home-only styles.
 
 ### Project Structure
-- Organized project into modular directories:
-  - `html/` contains HTML files.
-  - `scss/` contains SCSS files.
-  - `js/` contains JavaScript files.
-- `index.html` and compiled CSS remain in the project root.
+- Organized into modular directories:
+  - `pages/` for HTML files.
+  - `js/` for JavaScript files.
+- Kept `index.html` and `styles.css` in the project root.
