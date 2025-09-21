@@ -1,0 +1,54 @@
+# Contributors
+
+- Mwaba Chibalange
+- Chanda Chinyanta
+- Brian Kamvuma
+- Khumalo Njovu
+- Raymond Chitindi
+- Ben Phiri
+- Felix Chilufya Besa
+- Anthony Kalubaloshi
+- Frank Panji Malindi
+- Kelvin Mwanamwambwa
+- Chava Chipeta
+- Joseph Hercules Tembo
+- Nancy Lupiya
+- Monde Simwemba
+- Larry Muchimba
+- Isaac Hachilonde
+- Francis Mwiinga
+- Gracious Edinah Mudenda
+- John Daka
+- Kakube Nkosha
+- Bupe Bwale
+- Zacharia Chansa
+- Mtonga Isaiah
+- Daniel Kasaji
+- Mutale Malama
+- Dinda Micah
+- Samuel Mulenga
+- Munyinda Kabukabu
+- Philip Nali Ali
+- Walubita Jonathan
+- Emmanuel Munkombwe
+- Kanyungulu Musoka
+- Steven Msalu
+- Chafungwa Joshua Phiri
+- Salle Kamanisha
+- Mabvuto Moyo
+- Misheck Chirwa
+- Evans Mukoyo Mukoyo
+- Twasiukwa Mutambo
+- Kayando Isaac
+- Nathaniel Mutambo
+- Clifford Simumba
+- Golden Zulu
+- John Chileshe Mulenga
+- Rachel Kapembwa Kabalanyana
+- Henry Malaika
+- Jonathan Mulenga
+- Philip Bwalya
+- Stephen Bwalya Kasonde
+- Christine L Kayamba
+- Prince Mwape
+- James Mulenga Kashinga
